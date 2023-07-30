@@ -3,6 +3,9 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import Notification from '@/components/notification/Notification'
+// import { Provider } from 'react-redux'
+// import { PersistGate } from 'redux-persist/integration/react'
+// import { persistor,store } from '@/redux/store'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,10 +18,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+      {/* <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Notification/>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </PersistGate>
+      </Provider> */}
+        
         <Notification/>
-        <Navbar/>
-        {children}
-        <Footer/>
+          <Navbar/>
+          {children}
+          <Footer/>
         </body>
     </html>
   )
